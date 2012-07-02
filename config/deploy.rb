@@ -3,9 +3,9 @@
 # Script Name is the name of the logfile and the god script.
 # Start Command is the command god will issue to start the process.
 
-APPLICATION_NAME = "Scheduler"
-SCRIPT_NAME = "scheduler"
-REPOSITORY = "git://github.com/marktabler/scheduler.git"
+APPLICATION_NAME = "Reporter"
+SCRIPT_NAME = "reporter"
+REPOSITORY = "git://github.com/marktabler/reporter.git"
 
 # Unicorn start example
 # START_COMMAND = "unicorn /apps/#{APPLICATION_NAME}/current/config.ru -p 3001"
@@ -52,7 +52,7 @@ namespace :deploy do
     run "cd /apps/#{application}/current && bundle install --system"
   end
   task :start do
-    #crontab -e / 5 5 * * * cd /apps/Scheduler && bundle exec ruby lib/scheduler
+    #crontab -e / 5 5 * * * cd /apps/Reporter && bundle exec ruby lib/reporter
   end
   after "deploy", "deploy:bundle"
  
